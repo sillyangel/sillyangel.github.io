@@ -3,29 +3,29 @@
     "short_name": "Banana",
     "description": "Banana.",
 	"icons": [{
-		"src": "icons/icon16.png",
+		"src": "https://schoology.kleinisd.net/sites/all/themes/schoology_theme/favicon.ico",
 		"sizes": "16x16",
-		"type": "image/png"
+		"type": "image/x-icon"
 	}, {
-		"src": "icons/icon32.png",
+		"src": "https://schoology.kleinisd.net/sites/all/themes/schoology_theme/favicon.ico",
 		"sizes": "32x32",
-		"type": "image/png"
+		"type": "image/x-icon"
 	}, {
-		"src": "icons/icon128.png",
+		"src": "https://schoology.kleinisd.net/sites/all/themes/schoology_theme/favicon.ico",
 		"sizes": "128x128",
-		"type": "image/png"
+		"type": "image/x-icon"
 	}, {
-		"src": "icons/icon144.png",
+		"src": "https://schoology.kleinisd.net/sites/all/themes/schoology_theme/favicon.ico",
 		"sizes": "144x144",
-		"type": "image/png"
+		"type": "image/x-icon"
 	}, {
-		"src": "icons/icon248.png",
+		"src": "https://schoology.kleinisd.net/sites/all/themes/schoology_theme/favicon.ico",
 		"sizes": "256x256",
-		"type": "image/png"
+		"type": "image/x-icon"
 	}],
     "start_url": "index.html",
     "display": "fullscreen",
-    "theme_color": "#B12A34",
-    "background_color": "#B12A34"
+    "theme_color": "#677380",
+    "background_color": "#677380"
   }
   
