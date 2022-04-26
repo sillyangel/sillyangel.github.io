@@ -28,3 +28,5 @@ jobs:
     # Runs a single command using the runners shell
     - name: banana-corp.tk
       run: echo "runing on banana-corp.tk"
+      env:
+          Banana-corp.tk: Deployed
