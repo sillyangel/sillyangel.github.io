@@ -1,7 +1,2 @@
-# banana-nana.github.io
-**HEHEHA**
-# FAQ
- Q. What happend to the old Website? <br>
- A. WHat im doing is that im re making my website
- 
- 
+# Sillyangel.ml
+Welcome to my personal website very epic website 
