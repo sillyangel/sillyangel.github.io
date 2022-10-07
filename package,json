@@ -1,0 +1,29 @@
+{
+  "name": "Banana-dev",
+  "version": "0.0.1",
+  "description": "Website application",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron . --no-sandbox"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sillyangel/sillyangel.giithub.io.git"
+  },
+  "keywords": [
+    "Banana-dev",
+    "Eletron"
+  ],
+  "author": "Sillyangel3",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^19.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/sillyangel/sillyangel.giithub.io/issues"
+  },
+  "homepage": "https://github.com/sillyangel/sillyangel.giithub.io#readme",
+  "dependencies": {
+    "yarn": "^1.22.19"
+  }
+}
