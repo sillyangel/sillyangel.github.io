@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" />
   <link rel="stylesheet" href="/index.css" />
      <link rel="icon" type="image/png" href="/icons/icon.png">
+     <link rel="manifest" href="/manifest.json">
 <meta name="title" content="Banana Dev">
 <meta name="description" content="Made by Students for Students, We have games and discord server pls join">
 
@@ -60,6 +61,11 @@
     </div>
   
     <script src="index.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("/sw.js");
+      }     
+    </script>
 </body>
 
 </html>
