@@ -1,4 +1,4 @@
-var cacheName = 'Banana';
+var cacheName = 'ol';
 var cacheAssets = [
 	'index.css',
 	'index.js',
