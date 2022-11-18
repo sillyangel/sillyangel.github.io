@@ -49,9 +49,9 @@
         <h1 class="display-3">Banana Dev</h1>
     </div>
     <div class="container">
-      <p>hi welcome to my awsome website uh yeah</p><br>
-      <p>as you can see most of my websites are down because i took them down cus im tired of fixing them.</p><br>
-      <h2>About Me</h2> <br>
+      <p>hi welcome to my awsome website uh yeah</p>
+      <p>as you can see most of my websites are down because i took them down cus im tired of fixing them.</p>
+      <h2>About Me</h2>
       <p>I am a 7th grader, coder, frontend dev and many things, you can contact me thu </p> <a href="mailto:sillyangel@sillyangel.ml">My personal Email</a> <p> While i set up my public</p>
       <br>
         <div class="text-center">
@@ -62,11 +62,12 @@
         </div>
     </div>
     </div>
-  
+    <div id="toast"><div id="img">Icon</div><div id="desc">Offline Mode Active</div></div>
     <script src="index.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register("/sw.js");
+        launch_toast();
       }     
     </script>
 </body>

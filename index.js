@@ -10,15 +10,8 @@ function closeNav() {
 }
 
 
-const toast = document.getElementById('toast');
-
-function a() {
-  toast.querySelector('.toast-body').innerHTML = "Toast notification is working ...";
-  toast.classList.add('visible');
+function launch_toast() {
+  var x = document.getElementById("toast")
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }
-function b() {
-  toast.classList
-}
-document.getElementById('hideBtn').addEventListener('click', function() {
-    toast.classList.remove('visible');
-});
