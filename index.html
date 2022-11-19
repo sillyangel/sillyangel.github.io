@@ -38,7 +38,7 @@
 <meta property="twitter:image" content="/icons/icon.png">
 </head>
 
-<body>
+<body onload="checkCookie()">
     <div class="nav navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
         <div class="container-fluid"><a class="navbar-brand" href="/">Banana-Dev</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -64,12 +64,11 @@
         </div>
     </div>
     </div>
-    <div id="toast"><div id="img"><span style="padding: 0.5em;"><i class="fa-light fa-triangle-exclamation" title="Warning"></i></span></div><div id="desc">Offline Mode Active</div></div>
+    <div id="toast"><div id="img"><span style="padding-top: 10210px;"><i class="fa-light fa-triangle-exclamation" title="Warning"></i></span></div><div id="desc">Offline Mode Active</div></div>
     <script src="index.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register("/sw.js");
-        launch_toast();
       }     
     </script>
 </body>
