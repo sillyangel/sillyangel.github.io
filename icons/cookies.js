@@ -20,7 +20,7 @@ function setCookie(cname,cvalue,exdays) {
     }
     return "";
   }
-  
+                      
   function checkCookie() {
     let user = getCookie("username");
     if (user != "") {
