@@ -9,7 +9,7 @@ function closeNav() {
   document.getElementById("main").style.marginLeft= "0";
 }
 
-
+// notification 4 offline mode thingy
 function launch_toast() {
   var x = document.getElementById("toast")
   x.className = "show";
