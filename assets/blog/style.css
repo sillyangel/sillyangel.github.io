@@ -30,10 +30,12 @@ nav {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.blogimage {
+.blogtimage {
     text-align: left;
     margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    float: left; 
+    margin-right: 10px;
+}
+.blogtexts {
+    text-align: left;
 }
