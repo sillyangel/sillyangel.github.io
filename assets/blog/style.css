@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+.blogpage {
+    text-align: center;
+}
+* {
+    font-family: 'DM Serif Display', serif !important;
+    color: black !important;
+}
+
+.blogimage {
+    margin-top: 20px;
+}
+
+nav {
+    border-bottom: 1px solid;
+}
+
+.dateblog {
+    font-size: 12px;
+    color: gray !important;
+    margin-left: 50px !important;
+    text-align: left;
+}
+
+.blogtext {
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.blogtimage {
+    text-align: left;
+    margin-left: 50px;
+    float: left; 
+    margin-right: 10px;
+}
+.blogtexts {
+    text-align: left;
+}
