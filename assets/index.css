@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+.blogpage {
+    text-align: center;
+}
+* {
+    font-family: 'DM Serif Display', serif !important;
+    color: black !important;
+}
+
+.blogimage {
+    margin-top: 20px;
+}
+
+nav {
+    border-bottom: 1px solid;
+}
