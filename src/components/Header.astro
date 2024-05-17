@@ -1,4 +1,5 @@
 ---
+import ThemeIcon from './ThemeIcon.astro';
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
@@ -6,6 +7,7 @@ import { SITE_TITLE } from '../consts';
 <header>
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<ThemeIcon />
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/apps">Apps</HeaderLink>
