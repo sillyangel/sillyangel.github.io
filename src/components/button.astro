@@ -1,0 +1,73 @@
+---
+
+import type { HTMLAttributes } from 'astro/types';
+
+function getContrastColor(color) {
+  let rgbColor;
+  if (color.startsWith('#')) {
+    // Convert hex color to RGB
+    const hexValue = color.substring(1);
+    const r = parseInt(hexValue.substring(0, 2), 16);
+    const g = parseInt(hexValue.substring(2, 4), 16);
+    const b = parseInt(hexValue.substring(4, 6), 16);
+    rgbColor = `rgb(${r}, ${g}, ${b})`;
+  } else {
+    rgbColor = color;
+  }
+
+  const [r, g, b] = rgbColor.match(/\d+/g).map(Number);
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  return luminance > 0.5 ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)';
+}
+
+
+type Props = HTMLAttributes<'a'> & {
+  image?: string;
+  backgroundcolor?: string;
+};
+
+const { href, class: className, image, backgroundcolor, color, ...props } = Astro.props;;
+const { pathname } = Astro.url;
+---
+<a href={href} class:list={[className, 'buttonsd']} style={`background-color: ${backgroundcolor}; color: ${getContrastColor(backgroundcolor)}`} {...props}>
+  {image && <img src={image} />}
+  <slot />
+</a>
+
+<style>
+  .buttonsd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(0, 94, 255);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .buttonsd img {
+			margin-bottom: 10px; /* Space between the image and the text */
+}
+
+
+  /* Add color-based classes */
+  .red {
+    background-color: red;
+  }
+
+  .green {
+    background-color: green;
+  }
+
+  .blue {
+    background-color: blue;
+  }
+
+  /* Add more color-based classes as needed */
+</style>
