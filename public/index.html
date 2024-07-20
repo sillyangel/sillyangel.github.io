@@ -4,8 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>angel</title>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
         body {
             background-color: #292827;
             color: #E9E3E6;
@@ -33,7 +32,6 @@
             font-size: 3.5em;
             cursor: pointer;
         }
-
         a:hover {
             color: #E9E3E6;
         }
@@ -43,10 +41,15 @@
         }
         .section {
             display: none; /* Hide all sections by default */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.5s ease, visibility 1.5s ease; /* Add transition for smooth effect */
             margin-top: 50px;
         }
         .active {
             display: block; /* Show the active section */
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
@@ -59,49 +62,40 @@
             <li><a onclick="showSection('info')">Info</a></li>
         </ul>
     </div>
-
     <div id="home" class="section">
         <h2>Home Section</h2>
         <p>Welcome to the home section.</p>
         <button onclick="showMain()">Back to Main</button>
     </div>
-
     <div id="about" class="section">
         <h2>About Section</h2>
         <p>Welcome to the about section.</p>
         <button onclick="showMain()">Back to Main</button>
     </div>
-
     <div id="info" class="section">
         <h2>Info Section</h2>
         <p>Welcome to the info section.</p>
         <button onclick="showMain()">Back to Main</button>
     </div>
-
     <script>
         function reload() {
             window.location.reload();
         }
-
         function showSection(sectionId) {
             // Hide main
             document.getElementById('main').style.display = 'none';
-
             // Hide all sections
             var sections = document.querySelectorAll('.section');
             sections.forEach(function(section) {
                 section.classList.remove('active');
             });
-
             // Show the selected section
             var activeSection = document.getElementById(sectionId);
             activeSection.classList.add('active');
         }
-
         function showMain() {
             // Show main
             document.getElementById('main').style.display = 'block';
-
             // Hide all sections
             var sections = document.querySelectorAll('.section');
             sections.forEach(function(section) {
