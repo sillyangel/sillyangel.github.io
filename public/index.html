@@ -3,6 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>angel</title>
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
         body {
@@ -15,6 +17,8 @@
         }
         
         .name {
+            display: flex;
+            align-items: center;
             font-weight: 700;
             font-size: 2.5em;
             color: #535252;
@@ -24,6 +28,10 @@
             color: #E9E3E6;
             cursor: pointer;
             user-select: none;
+        }
+        
+        .separator, #page-name {
+            margin-left: 5px;
         }
         a {
             color: #5d5b5c;
@@ -44,7 +52,7 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity 1.5s ease, visibility 1.5s ease; /* Add transition for smooth effect */
-            margin-top: 50px;
+            margin: 0.5em; /* Ensure consistent margin */
         }
         .active {
             display: block; /* Show the active section */
@@ -54,12 +62,12 @@
     </style>
 </head>
 <body>
+    <h1 class="name" id="page-name">angel | Main Menu</h1>
     <div id="main">
-        <h1 class="name" onclick="reload()">angel</h1>
-        <ul>
-            <li><a onclick="showSection('home')">Home</a></li>
-            <li><a onclick="showSection('about')">About</a></li>
-            <li><a onclick="showSection('info')">Info</a></li>
+        <ul class="header">
+            <li><a href="#" id="home-link">Home</a></li>
+            <li><a href="#" id="about-link">About</a></li>
+            <li><a href="#" id="info-link">Info</a></li>
         </ul>
     </div>
     <div id="home" class="section">
@@ -78,10 +86,27 @@
         <button onclick="showMain()">Back to Main</button>
     </div>
     <script>
+        document.getElementById('home-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            showSection('home', 'Home');
+        });
+        document.getElementById('about-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            showSection('about', 'About');
+        });
+        document.getElementById('info-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            showSection('info', 'Info');
+        });
+
         function reload() {
             window.location.reload();
         }
-        function showSection(sectionId) {
+        
+        function showSection(sectionId, pageName) {
+            // Update the page name in the h1 tag
+            document.getElementById('page-name').textContent = 'angel | ' + pageName;
+
             // Hide main
             document.getElementById('main').style.display = 'none';
             // Hide all sections
@@ -93,9 +118,12 @@
             var activeSection = document.getElementById(sectionId);
             activeSection.classList.add('active');
         }
+        
         function showMain() {
             // Show main
             document.getElementById('main').style.display = 'block';
+            // Reset the page name in the h1 tag
+            document.getElementById('page-name').textContent = 'angel | Main Menu';
             // Hide all sections
             var sections = document.querySelectorAll('.section');
             sections.forEach(function(section) {
