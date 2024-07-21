@@ -15,7 +15,11 @@
             font-style: normal;
             margin: 2.5em;
         }
-        
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
         .name {
             display: flex;
             align-items: center;
@@ -37,7 +41,8 @@
             color: #5d5b5c;
             text-decoration: none;
             transition: color 0.4s ease; /* Add transition for smooth effect */
-            font-size: 3.5em;
+            font-size: 4.0em;
+            font-weight: 500;
             cursor: pointer;
         }
         a:hover {
@@ -48,82 +53,81 @@
             margin: 0.5em;
         }
         .section {
-            display: none; /* Hide all sections by default */
             opacity: 0;
             visibility: hidden;
-            transition: opacity 1.5s ease, visibility 1.5s ease; /* Add transition for smooth effect */
+            transform: translateY(20px);
             margin: 0.5em; /* Ensure consistent margin */
+            margin-left: 48px;
         }
         .active {
-            display: block; /* Show the active section */
             opacity: 1;
             visibility: visible;
+            transform: translateY(0);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .back-button {
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1 class="name" id="page-name">angel | Main Menu</h1>
+    <h1 class="name" id="page-name">angel</h1>
     <div id="main">
         <ul class="header">
-            <li><a href="#" id="home-link">Home</a></li>
-            <li><a href="#" id="about-link">About</a></li>
-            <li><a href="#" id="info-link">Info</a></li>
+            <li><a href="#projects" id="projects-link">Projects</a></li>
         </ul>
     </div>
-    <div id="home" class="section">
-        <h2>Home Section</h2>
-        <p>Welcome to the home section.</p>
-        <button onclick="showMain()">Back to Main</button>
-    </div>
-    <div id="about" class="section">
-        <h2>About Section</h2>
-        <p>Welcome to the about section.</p>
-        <button onclick="showMain()">Back to Main</button>
-    </div>
-    <div id="info" class="section">
-        <h2>Info Section</h2>
-        <p>Welcome to the info section.</p>
-        <button onclick="showMain()">Back to Main</button>
+    <div id="projects" class="section">
+        <p>Welcome to the projects section.</p>
     </div>
     <script>
-        document.getElementById('home-link').addEventListener('click', function(event) {
+        document.getElementById('projects-link').addEventListener('click', function(event) {
             event.preventDefault();
-            showSection('home', 'Home');
-        });
-        document.getElementById('about-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            showSection('about', 'About');
-        });
-        document.getElementById('info-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            showSection('info', 'Info');
+            showSection('projects', 'Projects');
         });
 
-        function reload() {
-            window.location.reload();
-        }
-        
+        document.getElementById('page-name').addEventListener('click', function() {
+            if (this.classList.contains('back-button')) {
+                showMain();
+            }
+        });
+
         function showSection(sectionId, pageName) {
             // Update the page name in the h1 tag
-            document.getElementById('page-name').textContent = 'angel | ' + pageName;
+            var pageNameElement = document.getElementById('page-name');
+            pageNameElement.textContent = pageName;
+            pageNameElement.classList.add('back-button');
 
             // Hide main
             document.getElementById('main').style.display = 'none';
+
             // Hide all sections
             var sections = document.querySelectorAll('.section');
             sections.forEach(function(section) {
+                section.style.display = 'block';
                 section.classList.remove('active');
+                // hide the divs but the one we want to show
+                if (section.id !== sectionId) {
+                    section.style.display = 'none';
+                }
             });
-            // Show the selected section
-            var activeSection = document.getElementById(sectionId);
-            activeSection.classList.add('active');
+
+            // Show the selected section after a slight delay
+            setTimeout(function() {
+                var activeSection = document.getElementById(sectionId);
+                activeSection.classList.add('active');
+            }, 100); // Delay to trigger transition
         }
-        
+
         function showMain() {
             // Show main
             document.getElementById('main').style.display = 'block';
+
             // Reset the page name in the h1 tag
-            document.getElementById('page-name').textContent = 'angel | Main Menu';
+            var pageNameElement = document.getElementById('page-name');
+            pageNameElement.textContent = 'angel';
+            pageNameElement.classList.remove('back-button');
+
             // Hide all sections
             var sections = document.querySelectorAll('.section');
             sections.forEach(function(section) {
