@@ -20,15 +20,16 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <Header />
   <main id="main-content">
     <section id="hero">
-      <div style="display: flex; align-items: flex-start;">
+      <div class="hero-content">
         <Image
           src="https://github.com/sillyangel.png"
           alt="github profile"
           width={200}
           height={200}
+          style="border-radius: 4%;"
         />
-        <div style="display: flex; flex-direction: column;">
-          <h1 style="margin-bottom: 1rem;">summary</h1>
+        <div class="hero-text">
+          <h1>about me</h1>
           <p>
             Hey im a werid 14 year old, that loves playing around with code, and
             creating dumb things, and I'm self-taught; but suck at explain it to
@@ -97,6 +98,29 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 <style>
   /* ===== Hero Section ===== */
+  .hero-content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.2rem;
+  }
+
+  @media (max-width: 600px) {
+    .hero-content {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-text {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
   #hero {
     @apply pb-6 pt-8;
   }

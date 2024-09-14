@@ -3,7 +3,7 @@ author: angel
 
 pubDatetime: 2023-11-14T12:00:00
 modDatetime: 2024-09-14T12:47:13.936Z
-title: FactTrack score exploit
+title: Facttrack score exploit
 featured: true
 draft: false
 tags:
@@ -16,6 +16,12 @@ description: exploit to my school district math game
 ![Proof of Concept](/public/proofofconcept.jpg)
 
 > things are removed for their privacy, and mine privacy
+
+This is very easy to do since they don't have the  javascript obfuscated, and with the help of Developer Tools, you too can do this but I don't recommend doing this at all.
+
+# Tutorial
+
+First off you have to open up a browser with Developer Tools, and then access the wesbite, after opening Developer Tools, you would open console, and follow as shown
 
 ```js
 score = [your chosen score]
@@ -63,3 +69,7 @@ function SubmitScore() {
 ```
 
 > comments are added extra
+
+very simple, and one way they can fix this is by obfuscate the underlying javascript, since after all this is just a javascript game.
+
+anyways bye bye

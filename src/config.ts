@@ -3,7 +3,7 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://sillyangel.github.io/", // replace this with your deployed domain
   author: "angel",
-  profile: "https://satnaing.dev/",
+  profile: "https://github.com/sillyangel",
   desc: "angel's blog.",
   title: "sillyangel",
   ogImage: "astropaper-og.jpg",
@@ -19,7 +19,7 @@ export const LOCALE = {
 } as const;
 
 export const LOGO_IMAGE = {
-  enable: false,
+  enable: true,
   svg: true,
   width: 216,
   height: 46,
