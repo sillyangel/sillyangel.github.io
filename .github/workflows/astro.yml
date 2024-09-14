@@ -36,11 +36,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Load .env file
-        uses: direnv/direnv-action@v2
-        with:
-          env_file: .env
-
       - name: Detect package manager
         id: detect-package-manager
         run: |
