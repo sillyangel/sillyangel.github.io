@@ -2,14 +2,14 @@ import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://sillyangel.github.io/", // replace this with your deployed domain
-  author: "Sat Naing",
+  author: "angel",
   profile: "https://satnaing.dev/",
   desc: "angel's blog.",
   title: "sillyangel",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
-  postPerPage: 3,
+  postPerPage: 8,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
