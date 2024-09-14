@@ -9,6 +9,7 @@ import Card from "@components/Card";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE } from "@config";
 import { Image } from "astro:assets";
+import ProfileImage from "@assets/sillyangel.jpeg"
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
@@ -22,11 +23,12 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     <section id="hero">
       <div class="hero-content">
         <Image
-          src="https://github.com/sillyangel.png"
+          src={ProfileImage}
           alt="github profile"
           width={200}
           height={200}
           style="border-radius: 4%;"
+          loading="eager"
         />
         <div class="hero-text">
           <h1>about me</h1>
