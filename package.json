@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "angelwebsite",
   "version": "4.4.0",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

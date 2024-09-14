@@ -8,13 +8,12 @@ import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE } from "@config";
-
+import { Image } from "astro:assets";
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
-
 ---
 
 <Layout>
@@ -22,11 +21,18 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <main id="main-content">
     <section id="hero">
       <div style="display: flex; align-items: flex-start;">
-        <img src="https://github.com/sillyangel.png" alt="GitHub Profile Image" style="width: 200px; height: 200px; border-radius: 5%; margin-right: 10px;" />
+        <Image
+          src="https://github.com/sillyangel.png"
+          alt="github profile"
+          width={200}
+          height={200}
+        />
         <div style="display: flex; flex-direction: column;">
           <h1 style="margin-bottom: 1rem;">summary</h1>
           <p>
-            Hey im a werid 14 year old, that loves playing around with code, and creating dumb things, and I'm self-taught; but suck at explain it to others.
+            Hey im a werid 14 year old, that loves playing around with code, and
+            creating dumb things, and I'm self-taught; but suck at explain it to
+            others.
           </p>
         </div>
       </div>
