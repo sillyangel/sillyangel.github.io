@@ -1,7 +1,7 @@
 ---
 author: angel
-pubDatetime: 
-modDatetime: 
+pubDatetime: 2024-11-30T01:23:07Z
+modDatetime: 2024-11-29T01:23:07Z
 title: New redesign and updates
 featured: true
 draft: true
