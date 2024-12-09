@@ -9,7 +9,7 @@ import Card from "@components/Card";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE } from "@config";
 import { Image } from "astro:assets";
-import ProfileImage from "@assets/sillyangel.jpeg"
+import ProfileImage from "@assets/sillyangel.jpg";
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
@@ -33,7 +33,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         <div class="hero-text">
           <h1>about me</h1>
           <p>
-            Hey im a werid 14 year old, that loves playing around with code, and
+            im a werid 14 year old, that loves playing around with code, and
             creating dumb things, and I'm self-taught; but suck at explain it to
             others.
           </p>

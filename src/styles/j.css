@@ -1,0 +1,16 @@
+html[data-theme="light"] {
+    --color-fill: rgb(173, 210, 220);
+    --color-text-base: rgb(40, 39, 40);
+    --color-accent: rgb(0, 108, 172);
+    --color-card: rgb(230, 230, 230);
+    --color-card-muted: rgb(205, 205, 205);
+    --color-border: rgb(231, 103, 5);
+  }
+  html[data-theme="dark"] {
+    --color-fill: rgb(204, 129, 54);
+    --color-text-base: rgb(255, 160, 87);
+    --color-accent: rgb(255, 102, 0);
+    --color-card: rgb(97, 37, 0);
+    --color-card-muted: rgb(138, 51, 2);
+    --color-border: rgb(198, 216, 255);
+  }
