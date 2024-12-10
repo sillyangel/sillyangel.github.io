@@ -1,6 +1,5 @@
 ---
 author: angel
-
 pubDatetime: 2023-11-14T12:00:00
 modDatetime: 2024-09-14T12:47:13.936Z
 title: Facttrack score exploit
