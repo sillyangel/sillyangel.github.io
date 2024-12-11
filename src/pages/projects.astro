@@ -3,13 +3,13 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Card from "@components/Card";
+import Card2 from "@components/projectcard";
 import { SITE } from "@config";
 
 const projects = await getCollection("projects");
 
 const sortedProjects = projects.sort(
-  (a, b) => new Date(b.data.pubDatetime) - new Date(a.data.pubDatetime)
+  (a, b) => new Date(b.data.pubDatetime).getTime() - new Date(a.data.pubDatetime).getTime()
 );
 ---
 
@@ -20,7 +20,7 @@ const sortedProjects = projects.sort(
       <h1>Projects</h1>
       <ul>
         {sortedProjects.map(({ data, slug }) => (
-          <Card href={`/projects/${slug}/`} frontmatter={data} />
+          <Card2 href={`/projects/${slug}/`} frontmatter={data} />
         ))}
       </ul>
     </section>

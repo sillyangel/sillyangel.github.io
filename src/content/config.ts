@@ -34,9 +34,12 @@ const projects = defineCollection({
       description: z.string(),
       pubDatetime: z.date(),
       ogImage: image()
-      .refine(img => img.width >= 1200 && img.height >= 630, {
-        message: "OpenGraph image must be at least 1200 X 630 pixels!",
-      })
+        .refine(img => img.width >= 1200 && img.height >= 630, {
+          message: "OpenGraph image must be at least 1200 X 630 pixels!",
+        })
+        .or(z.string())
+        .optional(),
+      canonicalURL: z.string().optional(),
     }),
 });
 export const collections = { blog, projects };
