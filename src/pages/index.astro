@@ -11,15 +11,10 @@ import { SITE } from "@config";
 import { Image } from "astro:assets";
 import ProfileImage from "@assets/sillyangel.jpg";
 const posts = await getCollection("blog");
-const projects = await getCollection("projects");
 
 const sortedPosts = getSortedPosts(posts);
-const sortedProjects = projects.sort(
-  (a, b) => new Date(b.data.pubDatetime).getTime() - new Date(a.data.pubDatetime).getTime()
-);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
-const recentProjects = sortedProjects.slice(0, 5);
 ---
 
 <Layout>
@@ -52,7 +47,7 @@ const recentProjects = sortedProjects.slice(0, 5);
       featuredPosts.length > 0 && (
         <>
           <section id="featured">
-            <h2>Featured</h2>
+            <h2>Featured Posts</h2>
             <ul>
               {featuredPosts.map(({ data, slug }) => (
                 <Card
@@ -87,24 +82,6 @@ const recentProjects = sortedProjects.slice(0, 5);
         </section>
       )
     }
-
-    {
-      recentProjects.length > 0 && (
-        <section id="recent-projects">
-          <h2>Recent Projects</h2>
-          <ul>
-            {recentProjects.map(({ data, slug }) => (
-              <Card
-                href={`/projects/${slug}/`}
-                frontmatter={data}
-                secHeading={false}
-              />
-            ))}
-          </ul>
-        </section>
-      )
-    }
-
     <div class="all-posts-btn-wrapper">
       <LinkButton href="/posts/">
         All Posts
