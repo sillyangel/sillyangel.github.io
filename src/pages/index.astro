@@ -15,7 +15,7 @@ const projects = await getCollection("projects");
 
 const sortedPosts = getSortedPosts(posts);
 const sortedProjects = projects.sort(
-  (a, b) => new Date(b.data.pubDatetime) - new Date(a.data.pubDatetime)
+  (a, b) => new Date(b.data.pubDatetime).getTime() - new Date(a.data.pubDatetime).getTime()
 );
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);

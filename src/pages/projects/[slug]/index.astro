@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import Projects from "@layouts/Project.astro";
 import ProjectDetails from "@layouts/ProjectDetails.astro";
-import getSortedPosts from "@utils/getSortedPosts";
+import getSortedProjects from "@utils/getSortedProjects";
 import getPageNumbers from "@utils/getPageNumbers";
 import getPagination from "@utils/getPagination";
 
@@ -30,7 +30,7 @@ const { post } = Astro.props;
 
 const projects = await getCollection("projects");
 
-const sortedPosts = getSortedPosts(projects);
+const sortedPosts = getSortedProjects(projects);
 
 const pagination = getPagination({
   posts: sortedPosts,
@@ -38,4 +38,4 @@ const pagination = getPagination({
 });
 ---
 
-{post ? <ProjectDetails post={projects} /> : <Projects {...pagination} />}
+{post ? <ProjectDetails post={post} /> : <Projects {...pagination} />}
