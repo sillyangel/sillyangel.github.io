@@ -25,4 +25,18 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { blog };
+const projects = defineCollection({
+  type: "content_layer",
+  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDatetime: z.date(),
+      ogImage: image()
+      .refine(img => img.width >= 1200 && img.height >= 630, {
+        message: "OpenGraph image must be at least 1200 X 630 pixels!",
+      })
+    }),
+});
+export const collections = { blog, projects };

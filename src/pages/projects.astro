@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Card from "@components/Card";
+import { SITE } from "@config";
+
+const projects = await getCollection("projects");
+
+const sortedProjects = projects.sort(
+  (a, b) => new Date(b.data.pubDatetime) - new Date(a.data.pubDatetime)
+);
+---
+
+<Layout title={`Projects | ${SITE.title}`}>
+  <Header activeNav="projects" />
+  <main id="main-content">
+    <section id="projects">
+      <h1>Projects</h1>
+      <ul>
+        {sortedProjects.map(({ data, slug }) => (
+          <Card href={`/projects/${slug}/`} frontmatter={data} />
+        ))}
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  #projects {
+    @apply pb-6 pt-12;
+  }
+  #projects h1 {
+    @apply text-2xl font-semibold tracking-wide;
+  }
+</style>

@@ -11,10 +11,15 @@ import { SITE } from "@config";
 import { Image } from "astro:assets";
 import ProfileImage from "@assets/sillyangel.jpg";
 const posts = await getCollection("blog");
+const projects = await getCollection("projects");
 
 const sortedPosts = getSortedPosts(posts);
+const sortedProjects = projects.sort(
+  (a, b) => new Date(b.data.pubDatetime) - new Date(a.data.pubDatetime)
+);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const recentProjects = sortedProjects.slice(0, 5);
 ---
 
 <Layout>
@@ -78,6 +83,23 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
                   />
                 )
             )}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      recentProjects.length > 0 && (
+        <section id="recent-projects">
+          <h2>Recent Projects</h2>
+          <ul>
+            {recentProjects.map(({ data, slug }) => (
+              <Card
+                href={`/projects/${slug}/`}
+                frontmatter={data}
+                secHeading={false}
+              />
+            ))}
           </ul>
         </section>
       )
@@ -147,11 +169,13 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
-  #recent-posts {
+  #recent-posts,
+  #recent-projects {
     @apply pb-6 pt-12;
   }
   #featured h2,
-  #recent-posts h2 {
+  #recent-posts h2,
+  #recent-projects h2 {
     @apply text-2xl font-semibold tracking-wide;
   }
   .all-posts-btn-wrapper {
