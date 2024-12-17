@@ -33,9 +33,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         <div class="hero-text">
           <h1>about me</h1>
           <p>
-            im a weird 14 year old, that loves playing around with code, and
-            creating dumb things, and I'm self-taught; but suck at explain it to
-            others.
+            I'm a 14 year old, that programs, and creating things, and I'm self-taught
           </p>
         </div>
       </div>
@@ -47,7 +45,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       featuredPosts.length > 0 && (
         <>
           <section id="featured">
-            <h2>Featured</h2>
+            <h2>Featured Posts</h2>
             <ul>
               {featuredPosts.map(({ data, slug }) => (
                 <Card
@@ -82,7 +80,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         </section>
       )
     }
-
     <div class="all-posts-btn-wrapper">
       <LinkButton href="/posts/">
         All Posts
@@ -147,11 +144,13 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
-  #recent-posts {
+  #recent-posts,
+  #recent-projects {
     @apply pb-6 pt-12;
   }
   #featured h2,
-  #recent-posts h2 {
+  #recent-posts h2,
+  #recent-projects h2 {
     @apply text-2xl font-semibold tracking-wide;
   }
   .all-posts-btn-wrapper {

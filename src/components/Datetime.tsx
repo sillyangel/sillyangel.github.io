@@ -2,7 +2,7 @@ import { LOCALE } from "@config";
 
 interface DatetimesProps {
   pubDatetime: string | Date;
-  modDatetime: string | Date | undefined | null;
+  modDatetime?: string | Date | undefined | null;
 }
 
 interface Props extends DatetimesProps {
@@ -15,7 +15,7 @@ export default function Datetime({
   modDatetime,
   size = "sm",
   className = "",
-}: Props) {
+}: Props): JSX.Element {
   return (
     <div
       className={`flex items-center space-x-2 opacity-80 ${className}`.trim()}
@@ -40,7 +40,6 @@ export default function Datetime({
       <span className={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
         <FormattedDatetime
           pubDatetime={pubDatetime}
-          modDatetime={modDatetime}
         />
       </span>
     </div>
