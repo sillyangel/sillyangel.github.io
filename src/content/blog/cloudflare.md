@@ -4,7 +4,7 @@ pubDatetime: 2024-12-11T14:00:00Z
 modDatetime: 2025-01-03T20:00:00Z
 title: How to Set Up a Domain with Cloudflare
 featured: true
-draft: 
+draft: false
 tags:
   - cloudflare
   - Guide
